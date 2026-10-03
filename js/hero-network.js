@@ -100,7 +100,11 @@
       if (titleEl) {
         var hr = hero.getBoundingClientRect();
         var tr = titleEl.getBoundingClientRect();
-        titleZone = { x: tr.left - hr.left, y: tr.top - hr.top, w: tr.width, h: tr.height };
+        var tg = hero.querySelector('.tagline');
+        var br = tg ? tg.getBoundingClientRect() : tr;      // keep the tagline clear too
+        var l = Math.min(tr.left, br.left), t = Math.min(tr.top, br.top);
+        var r = Math.max(tr.right, br.right), b = Math.max(tr.bottom, br.bottom);
+        titleZone = { x: l - hr.left, y: t - hr.top, w: r - l, h: b - t };
       } else {
         titleZone = null;
       }

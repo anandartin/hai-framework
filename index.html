@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Human-Centred Agentic Intelligence (HAI) — A Three-Layer Framework for Human–Agent–System Journeys</title>
+<meta name="description" content="HAI is a dual-mode, three-layer design methodology for mapping human–agent–system journeys in agentic AI products. The Sovereign AI Extension adds a Sovereignty Boundary dimension for specifying data residency, compute location, and model provenance at design time. By Anandakumar Muniasamy Pothiraj." />
+<meta name="author" content="Anandakumar Muniasamy Pothiraj" />
+<meta name="theme-color" content="#FFFFFF" />
+<link rel="canonical" href="https://hai-framework.org/" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="og:url" content="https://hai-framework.org/" />
+<meta property="og:site_name" content="HAI Framework" />
+<meta property="og:image" content="https://hai-framework.org/assets/img/Header.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Human-Centred Agentic Intelligence (HAI)" />
+<meta name="twitter:description" content="A three-layer, dual-mode framework for designing human–agent–system journeys." />
+<meta name="twitter:image" content="https://hai-framework.org/assets/img/Header.png" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Human-Centred Agentic Intelligence (HAI)" />
+<meta property="og:description" content="A three-layer, dual-mode framework for designing human–agent–system journeys in agentic AI products — now extended with a Sovereign AI alignment layer." />
+<meta property="og:type" content="article" />
+<meta property="article:author" content="Anandakumar Muniasamy Pothiraj" />
+<meta property="article:published_time" content="2026-05-26" />
+
+<!-- Citation metadata for Google Scholar / Hugging Face Papers -->
+<meta name="citation_title" content="Human-Centred Agentic Intelligence (HAI): A Three-Layer Framework for Designing Human-Agent-System Journeys" />
+<meta name="citation_author" content="Pothiraj, Anandakumar Muniasamy" />
+<meta name="citation_publication_date" content="2026/05" />
+<meta name="citation_doi" content="10.5281/zenodo.20389202" />
+<meta name="citation_public_url" content="https://doi.org/10.5281/zenodo.20389202" />
+<meta name="citation_pdf_url" content="https://zenodo.org/records/20389202/files/HAI_Whitepaper_3_layer_sovereign-AI.pdf" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div class="scroll-progress" id="progress" aria-hidden="true"></div>
+
+<!-- ━━━━━━━━━━ STICKY NAVIGATOR ━━━━━━━━━━ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="wordmark">HAI<span class="dot">.</span></a>
+    <div class="rail" id="rail">
+      <a class="rail-item" href="#abstract"><span class="rail-num">01</span><span class="rail-label">Abstract</span></a>
+      <a class="rail-item" href="#problem"><span class="rail-num">02</span><span class="rail-label">Two Journeys</span></a>
+      <a class="rail-item" href="#framework"><span class="rail-num">03</span><span class="rail-label">Framework</span></a>
+      <a class="rail-item" href="#modes"><span class="rail-num">04</span><span class="rail-label">Dual-Mode</span></a>
+      <a class="rail-item" href="#agent-modes"><span class="rail-num">05</span><span class="rail-label">Agent Modes</span></a>
+      <a class="rail-item" href="#failure"><span class="rail-num">06</span><span class="rail-label">Failure</span></a>
+      <a class="rail-item" href="#protocols"><span class="rail-num">07</span><span class="rail-label">Protocols</span></a>
+      <a class="rail-item" href="#sovereignty"><span class="rail-num">08</span><span class="rail-label">Sovereignty</span></a>
+      <a class="rail-item" href="#cases"><span class="rail-num">09</span><span class="rail-label">Use Cases</span></a>
+      <a class="rail-item" href="#paper"><span class="rail-num">10</span><span class="rail-label">Paper</span></a>
+      <a class="rail-item" href="#cite"><span class="rail-num">11</span><span class="rail-label">Cite</span></a>
+      <a class="rail-item" href="#author"><span class="rail-num">12</span><span class="rail-label">Author</span></a>
+    </div>
+  </div>
+</nav>
+
+<div id="top"></div>
+
+<!-- ━━━━━━━━━━ HERO ━━━━━━━━━━ -->
+<header class="hero">
+  <canvas class="hero-net" aria-hidden="true"></canvas>
+  <div class="wrap hero-stagger">
+    <div class="eyebrow">Whitepaper · May 2026 · v2 · Sovereign AI Extension</div>
+    <h1>Human-Centred Agentic <em>Intelligence</em></h1>
+    <p class="hero-sub">A dual-mode, three-layer design methodology for the products, lifecycles, and governance structures that emerge when AI agents become first-class participants in the user experience.</p>
+    <p class="hero-byline">A research study by <strong>Anandakumar Muniasamy Pothiraj</strong> · Independent Researcher, London</p>
+    <div class="badges">
+      <span class="badge lead">Published</span>
+      <span class="badge">EU AI Act mapped</span>
+      <span class="badge">Sovereign AI extension</span>
+      <span class="badge">CC BY-NC-ND 4.0</span>
+      <span class="badge">MCP · A2A · AG-UI aware</span>
+    </div>
+    <div class="meta-strip">
+      <div class="meta-cell">
+        <div class="meta-label">Author</div>
+        <div class="meta-value">A. M. Pothiraj</div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">ORCID</div>
+        <div class="meta-value"><a href="https://orcid.org/0009-0007-3713-7704" target="_blank" rel="noopener">0009-0007-3713-7704</a></div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">Affiliation</div>
+        <div class="meta-value">Independent Researcher · London</div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-label">Version · Refs</div>
+        <div class="meta-value">v2 · 26 references</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ━━━━━━━━━━ 01 — ABSTRACT ━━━━━━━━━━ -->
+<section class="section reveal" id="abstract">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-index">
+        <span class="sec-numeral">01</span>
+        <span class="sec-kicker">Abstract</span>
+      </div>
+      <div class="sec-content">
+        <h2 class="sec-title">What this paper proposes.</h2>
+        <div class="prose">
+          <p>This whitepaper introduces the <strong>Human-Centred Agentic Intelligence (HAI) framework</strong>, a dual-mode, three-layer design methodology for mapping human–agent–system journeys. As organisations deploy AI agents across both discrete product tasks and extended customer lifecycles, existing design tools fail to capture agent reasoning, system infrastructure, and failure handling alongside the human experience.</p>
+          <p>HAI addresses this gap through a <strong>Unified Three-Layer Journey Matrix</strong> comprising a Human Layer (user/customer experience), an Agent Layer (reasoning, autonomy modes, and failure protocols), and a System Layer (data, infrastructure, protocols, and governance). The framework operates in two modes: a <strong>User Journey Matrix</strong> for step-based product and task design, and a <strong>Customer Journey Matrix</strong> for stage-based lifecycle design — sharing identical Agent and System layers.</p>
+          <p>Complementary structures include a Goal Failure Response Protocol with seven failure types and five failure states, a Multi-Agent Role Taxonomy with layered accountability, a three-tier agent memory architecture, protocol integration guidance for MCP and A2A standards, EU AI Act compliance mapping, and a three-layer measurement framework.</p>
+          <p>This edition adds a <strong>Sovereign AI alignment layer</strong>: a <strong>Sovereignty Boundary</strong> dimension in the System Layer and a structured sovereignty taxonomy, treating data, compute, model, and regulatory sovereignty as design-time specifications rather than runtime constraints.</p>
+        </div>
+        <div class="keywords">
+          <span class="kw-head">Keywords</span>
+          <span class="kw">Agentic AI</span><span class="kw">Human-Centred AI</span><span class="kw">Journey Mapping</span><span class="kw">Multi-Agent Systems</span><span class="kw">EU AI Act</span><span class="kw">Sovereign AI</span><span class="kw">Digital Sovereignty</span><span class="kw">MCP Protocol</span><span class="kw">A2A Protocol</span><span class="kw">UX Design Framework</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ 02 — TWO JOURNEYS ━━━━━━━━━━ -->
+<section class="section reveal" id="problem">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-index">
+        <span class="sec-numeral">02</span>
+        <span class="sec-kicker">The Two Journeys</span>
+      </div>
+      <div class="sec-content">
+        <h2 class="sec-title">One product. One relationship. Two design problems wrongly conflated.</h2>
+        <p class="lede">Modern AI deployments span two fundamentally different journey types — and most organisations conflate them, producing matrices that are either too tactical (missing lifecycle strategy) or too abstract (missing operational precision). Neither journey can be designed well without the other.</p>
+        <div class="duo">
+          <div class="duo-cell">
+            <div class="duo-tag">Bounded · Sequential · Step-specific</div>
+            <h3>The User Journey</h3>
+            <p>The experience a person has performing a specific task inside a product or service. Onboarding a user, completing a checkout, resolving a support ticket. Failure has <strong>immediate, localised</strong> consequences.</p>
+            <p>Owned by product designers, UX teams, agentic engineers.</p>
+          </div>
+          <div class="duo-cell">
+            <div class="duo-tag">Spanning · Lifecycle · Stage-based</div>
+            <h3>The Customer Journey</h3>
+            <p>The experience a person has across their full relationship with an organisation — awareness through advocacy. Trust evolves, intent shifts, memory accumulates. Failure has <strong>strategic, relationship-level</strong> consequences.</p>
+            <p>Owned by CX strategists, marketing, customer success.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ 03 — FRAMEWORK ━━━━━━━━━━ -->
+<section class="section reveal" id="framework">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-index">
+        <span class="sec-numeral">03</span>
+        <span class="sec-kicker">Unified Three-Layer Matrix</span>
+      </div>
+      <div class="sec-content">
+        <h2 class="sec-title">Three layers of design, asked at every phase of every journey.</h2>
+        <p class="lede">Traditional journey mapping captures the human dimension but ignores the agent and system. Agentic AI frameworks address the agent but ignore the human. HAI addresses all three — for both journey types — through a single matrix structure.</p>
+        <div class="blocks">
+          <div class="block">
+            <div class="block-tag">Layer 01</div>
+            <div>
+              <img class="block-icon" src="/assets/img/Human_Layer.svg" alt="" />
+              <h3>Human Layer</h3>
+              <p>What the person sees, does, feels, and needs — labelled "User Layer" in step-based mode, "Customer Layer" in stage-based mode.</p>
+            </div>
+          </div>
+          <div class="block">
+            <div class="block-tag">Layer 02</div>
+            <div>
+              <img class="block-icon" src="/assets/img/Agent_Layer.svg" alt="" />
+              <h3>Agent Layer</h3>
+              <p>What the AI thinks, why it acts, how autonomous it should be, and what it does when things go wrong. Identical across both modes.</p>
+            </div>
+          </div>
+          <div class="block">
+            <div class="block-tag">Layer 03</div>
+            <div>
+              <img class="block-icon" src="/assets/img/System_Layer.svg" alt="" />
+              <h3>System Layer</h3>
+              <p>What data is required, how fresh it must be, which protocols govern connections, and what compliance, regulatory, and data-sovereignty constraints apply.</p>
+            </div>
+          </div>
+        </div>
+        <div class="qlist">
+          <div class="q"><span class="qn">Q1</span><span>What is the human trying to accomplish, and how do they feel?</span></div>
+          <div class="q"><span class="qn">Q2</span><span>What triggers the agent to act, and what is it trying to achieve?</span></div>
+          <div class="q"><span class="qn">Q3</span><span>How autonomous is the agent at this phase, and why?</span></div>
+          <div class="q"><span class="qn">Q4</span><span>What data must be available and what infrastructure is required?</span></div>
+          <div class="q"><span class="qn">Q5</span><span>Which agents are involved, and how do they interact under normal operation?</span></div>
+          <div class="q"><span class="qn">Q6</span><span>What happens if the agent cannot achieve its goal, and when does control escalate?</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ 04 — DUAL-MODE ━━━━━━━━━━ -->
+<section class="section reveal" id="modes">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-index">
+        <span class="sec-numeral">04</span>
+        <span class="sec-kicker">Dual-Mode Architecture</span>
+      </div>
+      <div class="sec-content">
+        <h2 class="sec-title">Two matrix templates. Same Agent and System layers. Distinct Human vocabularies.</h2>
+        <p class="lede">The framework provides two matrix templates that share an identical Agent Layer and System Layer, but carry Human Layers tailored to their purpose — step-based product design, or stage-based lifecycle design.</p>
+        <div class="spec">
+          <div class="spec-row head">
+            <div class="spec-cell">Dimension</div>
+            <div class="spec-cell">Mode A — User Journey</div>
+            <div class="spec-cell">Mode B — Customer Journey</div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-cell key">Unit of analysis</div>
+            <div class="spec-cell">A discrete task step</div>
+            <div class="spec-cell">A lifecycle stage</div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-cell key">Time horizon</div>
+            <div class="spec-cell">Minutes to hours</div>
+            <div class="spec-cell">Days, weeks, months</div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-cell key">Primary audience</div>
+            <div class="spec-cell">Product, UX, agentic engineering</div>
+            <div class="spec-cell">CX, marketing, customer success</div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-cell key">Failure impact</div>
+            <div class="spec-cell">Localised — affects task completion</div>
+            <div class="spec-cell">Strategic — affects the relationship</div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-cell key">Memory emphasis</div>
+            <div class="spec-cell">Short-term working memory primary</div>
+            <div class="spec-cell">All three tiers; procedural critical</div>
+          </div>
+        </div>
+        <div class="callout">
+          <span class="co-label">Cross-mode design rule</span>
+          <p>The Agent Mode established in the Customer Journey Matrix for a stage sets the <em>ceiling</em> for agent autonomy within that stage's User Journey steps. Awareness as Assistive means no individual step within Awareness may run Autonomous.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ 05 — AGENT MODES ━━━━━━━━━━ -->
+<section class="section reveal" id="agent-modes">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-index">
+        <span class="sec-numeral">05</span>
+        <span class="sec-kicker">Agent Mode Taxonomy</span>
+      </div>
+      <div class="sec-content">
+        <h2 class="sec-title">Three modes of autonomy, calibrated to phase safety and demonstrated trust.</h2>
+        <div class="blocks">
+          <div class="block">
+            <div class="block-tag">Mode 01</div>
+            <div>
+              <img class="block-icon" src="/assets/img/Assistive.svg" alt="" />
+              <h3>Assistive</h3>
+              <p>Human initiates. Agent informs only. Human decides every action.</p>
+              <div class="when">When → high-risk · awareness · new users</div>
+            </div>
+          </div>
+          <div class="block">
+            <div class="block-tag">Mode 02</div>
+            <div>
+              <img class="block-icon" src="/assets/img/Advisory.svg" alt="" />
+              <h3>Advisory</h3>
+              <p>Agent suggests. Human approves or modifies before anything happens.</p>
+              <div class="when">When → consideration · configuration · decision support</div>
+            </div>
+          </div>
+          <div class="block">
+            <div class="block-tag">Mode 03</div>
+            <div>
+              <img class="block-icon" src="/assets/img/autonomous.svg" alt="" />
+              <h3>Autonomous</h3>
+              <p>Agent acts within guardrails. Human can override or undo post-action.</p>
+              <div class="when">When → proven competence · retention · routine steps</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ 06 — FAILURE ━━━━━━━━━━ -->
+<section class="section reveal" id="failure">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-index">
+        <span class="sec-numeral">06</span>
+        <span class="sec-kicker">Failure &amp; Handover</span>
+      </div>
+      <div class="sec-content">
+        <h2 class="sec-title">Every phase has a documented failure path, not just a happy path.</h2>
+        <p class="lede">Agentic systems regularly encounter ambiguous inputs, data unavailability, conflicting constraints, low-confidence outputs, and timeouts. Without a documented failure protocol, agents fail silently, retry indefinitely, or escalate without context. HAI defines <strong style="color:var(--ink);">seven failure types</strong>, <strong style="color:var(--ink);">five failure states</strong>, and a <strong style="color:var(--ink);">nine-element handover context package</strong> for transferring control to a human.</p>
+        <div class="stepper">
+          <div class="step">
+            <div class="step-num">State 01</div>
+            <h3>Active</h3>
+            <p>Normal operation. Normal interaction.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">State 02</div>
+            <h3>Uncertain</h3>
+            <p>Clarification request or advisory disclosure surfaced.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">State 03</div>
+            <h3>Degraded</h3>
+            <p>Retry with fallback. Mode degrades. Reduced capability.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">State 04</div>
+            <h3>Escalating</h3>
+            <p>Handover context package being prepared. Human informed.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">State 05</div>
+            <h3>Resolved</h3>
+            <p>Original agent moves to monitoring role. Continuity maintained.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ 07 — PROTOCOLS ━━━━━━━━━━ -->
+<section class="section reveal" id="protocols">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-index">
+        <span class="sec-numeral">07</span>
+        <span class="sec-kicker">Protocol Standards</span>
+      </div>
+      <div class="sec-content">
+        <h2 class="sec-title">Grounded in the protocols agents actually use.</h2>
+        <p class="lede">As of 2026, the agent protocol landscape has consolidated under the Linux Foundation. HAI's System Layer captures which protocol governs each phase's interactions — analogous to how TCP/IP, HTTP, and TLS layer to form the internet.</p>
+        <div class="stack">
+          <div class="stack-row">
+            <div class="stack-layer">Agent ↔ Tools</div>
+            <div class="stack-proto"><strong>MCP</strong>Model Context Protocol — tool, data, and API connectivity. Donated to AAIF (Linux Foundation) Dec 2025.</div>
+            <div class="stack-status">De facto standard</div>
+          </div>
+          <div class="stack-row">
+            <div class="stack-layer">Agent ↔ Agent</div>
+            <div class="stack-proto"><strong>A2A</strong>Agent-to-Agent Protocol — task delegation, multi-agent collaboration. v1.0 March 2026.</div>
+            <div class="stack-status">Production-ready</div>
+          </div>
+          <div class="stack-row">
+            <div class="stack-layer">Agent ↔ User</div>
+            <div class="stack-proto"><strong>AG-UI</strong>Agent-User Interaction Protocol — frontend streaming and interaction (CopilotKit).</div>
+            <div class="stack-status">Emerging</div>
+          </div>
+          <div class="stack-row">
+            <div class="stack-layer">Observability</div>
+            <div class="stack-proto"><strong>OTel GenAI</strong>OpenTelemetry Semantic Conventions — logging, tracing, monitoring. EU AI Act audit infrastructure.</div>
+            <div class="stack-status">Becoming de facto</div>
+          </div>
+          <div class="stack-row">
+            <div class="stack-layer">Governance</div>
+            <div class="stack-proto"><strong>EU AI Act</strong>Articles 9, 13, 14 — risk management, transparency, human oversight. Full enforcement Aug 2026.</div>
+            <div class="stack-status">Binding regulation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ 08 — SOVEREIGN AI ━━━━━━━━━━ -->
+<section class="section reveal" id="sovereignty">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-index">
+        <span class="sec-numeral">08</span>
+        <span class="sec-kicker">Sovereign AI Alignment</span>
+      </div>
+      <div class="sec-content">
+        <h2 class="sec-title">Who decides what, on whose infrastructure, under whose law.</h2>
+        <p class="lede">Sovereign AI is the capability to specify, govern, and operate AI systems under your own law, on your own infrastructure, with your own accountability structures — independent of any single foreign provider, model, or cloud. HAI treats sovereignty as a <strong style="color:var(--ink);">design-time specification problem</strong>, not a runtime constraint. Runtime controls can be retrofitted; sovereignty intent must be specified when the matrix is designed.</p>
+        <div class="sov-grid">
+          <div class="sov-card">
+            <div class="sov-num">Type 01</div>
+            <h3>Data Sovereignty</h3>
+            <p>Where data is stored and processed, the jurisdiction whose law governs it, and cross-border transfer obligations.</p>
+            <div class="sov-map">System Layer · Data Layer Needs · Sovereignty Boundary</div>
+          </div>
+          <div class="sov-card">
+            <div class="sov-num">Type 02</div>
+            <h3>Compute Sovereignty</h3>
+            <p>The physical and jurisdictional location of inference, training, and fine-tuning compute.</p>
+            <div class="sov-map">System Layer · Physical/Infra · Sovereignty Boundary</div>
+          </div>
+          <div class="sov-card">
+            <div class="sov-num">Type 03</div>
+            <h3>Model Sovereignty</h3>
+            <p>Provenance, licensing, and ownership of the model — domestic-trained, open-weight, foreign foundation, or sovereign fine-tune.</p>
+            <div class="sov-map">Agent Layer · Agent Type · Sovereignty Boundary</div>
+          </div>
+          <div class="sov-card">
+            <div class="sov-num">Type 04</div>
+            <h3>Regulatory Sovereignty</h3>
+            <p>Which legal regime governs the deployment — AI-specific law, sectoral rules, and cross-border data transfer obligations.</p>
+            <div class="sov-map">System Layer · Regulatory &amp; Sovereignty Classification</div>
+          </div>
+          <div class="sov-card">
+            <div class="sov-num">Type 05</div>
+            <h3>Operational Sovereignty</h3>
+            <p>Domestic workforce, supply chain, and operational control of the agent system across its lifecycle.</p>
+            <div class="sov-map">System Layer · Compliance &amp; Governance</div>
+          </div>
+          <div class="sov-card">
+            <div class="sov-num">Type 06</div>
+            <h3>Security &amp; Trust Sovereignty</h3>
+            <p>Independent verifiability of identity, authentication, audit, and observability — without reliance on a single foreign provider.</p>
+            <div class="sov-map">System Layer · Protocol Layer · Compliance &amp; Governance</div>
+          </div>
+        </div>
+        <div class="callout">
+          <span class="co-label">The Sovereignty Boundary dimension</span>
+          <p>A new System Layer dimension specified per step or stage, documenting five elements: <em>data residency jurisdiction</em>, <em>compute residency requirement</em>, <em>model provenance constraint</em>, <em>cross-border data flow permission</em>, and <em>accountable jurisdiction</em>. Where a phase has no sovereignty constraints, it is marked "Non-sovereign" with a brief justification — an explicit audit artefact, not a blank cell.</p>
+        </div>
+        <div class="note-strip">
+          <strong>WHY HAI SUITS SOVEREIGN AI →</strong> Three-layer separation lets sovereignty be specified per layer, not per system — a foreign foundation model with in-jurisdiction inference and native-language UX. · The framework is technology-agnostic, so a matrix can be retargeted to a sovereign stack by changing only System Layer cells. · Existing HAI artefacts — failure protocol, role taxonomy, memory architecture — already produce the layered-accountability and right-of-erasure documentation sovereign oversight bodies require.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ 09 — USE CASES ━━━━━━━━━━ -->
+<section class="section reveal" id="cases">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-index">
+        <span class="sec-numeral">09</span>
+        <span class="sec-kicker">Use Cases</span>
+      </div>
+      <div class="sec-content">
+        <h2 class="sec-title">Worked examples in both modes.</h2>
+        <div class="blocks">
+          <div class="block">
+            <div class="block-tag">Case 01</div>
+            <div>
+              <h3>SaaS Onboarding</h3>
+              <p>Initial configuration step with Advisory-mode agent recommending sensible defaults from team-size and industry signals. Failure-handover triggered after two recommendation rejections.</p>
+              <div class="when">Mode → User Journey · Step-based</div>
+            </div>
+          </div>
+          <div class="block">
+            <div class="block-tag">Case 02</div>
+            <div>
+              <h3>E-Commerce Lifecycle</h3>
+              <p>Awareness through Retention. Agent mode escalates from Assistive to Autonomous as trust accumulates. A2A pipelines coordinate recommendation, checkout, fraud detection, and renewal agents across stages.</p>
+              <div class="when">Mode → Customer Journey · Stage-based</div>
+            </div>
+          </div>
+          <div class="block">
+            <div class="block-tag">Case 03</div>
+            <div>
+              <h3>Enterprise Support</h3>
+              <p>Triage, Resolution, and Escalation steps. Orchestrated pipeline of Triage, Classification, Routing, Resolution, Verification, and Reply Draft agents — with structured Human Liaison handover when confidence drops below 65%.</p>
+              <div class="when">Mode → User Journey · Multi-agent</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ 10 — READ & DOWNLOAD ━━━━━━━━━━ -->
+<section class="section reveal" id="paper">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-index">
+        <span class="sec-numeral">10</span>
+        <span class="sec-kicker">Read &amp; Download</span>
+      </div>
+      <div class="sec-content">
+        <h2 class="sec-title">The full paper. The templates. Supporting materials.</h2>
+        <div class="dl-list">
+          <a href="https://zenodo.org/records/20389202/files/HAI_Whitepaper_3_layer_sovereign-AI.pdf?download=1" class="dl" target="_blank" rel="noopener">
+            <span class="dl-mark">↓</span>
+            <span class="dl-text">
+              <span class="dl-title">Whitepaper · Sovereign AI Extension</span>
+              <span class="dl-meta">PDF · 3-Layer Edition · Final v2</span>
+            </span>
+            <span class="dl-arrow">→</span>
+          </a>
+          <a href="https://doi.org/10.5281/zenodo.20389202" class="dl" target="_blank" rel="noopener">
+            <span class="dl-mark">◎</span>
+            <span class="dl-text">
+              <span class="dl-title">Zenodo Record · DOI</span>
+              <span class="dl-meta">10.5281/zenodo.20389202</span>
+            </span>
+            <span class="dl-arrow">→</span>
+          </a>
+          <a href="https://zenodo.org/records/20389202/files/HAI_Journey_Matrix_Template.xlsx?download=1" class="dl" target="_blank" rel="noopener">
+            <span class="dl-mark">⊞</span>
+            <span class="dl-text">
+              <span class="dl-title">Journey Matrix Template</span>
+              <span class="dl-meta">XLSX · incl. Sovereignty Boundary</span>
+            </span>
+            <span class="dl-arrow">→</span>
+          </a>
+          <a href="https://orcid.org/0009-0007-3713-7704" class="dl" target="_blank" rel="noopener">
+            <span class="dl-mark">⌖</span>
+            <span class="dl-text">
+              <span class="dl-title">ORCID Record</span>
+              <span class="dl-meta">0009-0007-3713-7704</span>
+            </span>
+            <span class="dl-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ 11 — HOW TO CITE ━━━━━━━━━━ -->
+<section class="section reveal" id="cite">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-index">
+        <span class="sec-numeral">11</span>
+        <span class="sec-kicker">How to Cite</span>
+      </div>
+      <div class="sec-content">
+        <h2 class="sec-title">BibTeX, for your reference manager.</h2>
+        <div class="cite-block">
+          <button class="copy-btn" id="copyBtn" type="button" aria-label="Copy citation">Copy</button>
+<pre id="bibtex">@techreport{pothiraj2026hai,
+  author      = {Pothiraj, Anandakumar Muniasamy},
+  title       = {{Human-Centred Agentic Intelligence (HAI):
+                  A Three-Layer Framework for Designing
+                  Human-Agent-System Journeys}},
+  institution = {Independent Researcher},
+  address     = {London, United Kingdom},
+  year        = {2026},
+  month       = may,
+  type        = {Whitepaper},
+  version     = {v2 --- Sovereign AI Extension},
+  doi         = {10.5281/zenodo.20389202},
+  note        = {ORCID: 0009-0007-3713-7704},
+  url         = {https://doi.org/10.5281/zenodo.20389202}
+}</pre>
+        </div>
+        <p class="cite-plain">
+          <span class="lbl">Plain text</span> Pothiraj, A. M. (2026). <em>Human-Centred Agentic Intelligence (HAI): A Three-Layer Framework for Designing Human-Agent-System Journeys</em> (Version v2, Sovereign AI Extension) [Whitepaper]. Zenodo. https://doi.org/10.5281/zenodo.20389202
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ 12 — AUTHOR ━━━━━━━━━━ -->
+<section class="section reveal" id="author">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-index">
+        <span class="sec-numeral">12</span>
+        <span class="sec-kicker">Author</span>
+      </div>
+      <div class="sec-content">
+        <div class="author-name">Anandakumar<br/>Muniasamy Pothiraj</div>
+        <div class="author-affil">Independent Researcher · London, UK</div>
+        <a href="https://orcid.org/0009-0007-3713-7704" class="author-orcid" target="_blank" rel="noopener">orcid.org/0009-0007-3713-7704</a>
+        <div class="author-bio">
+          <p>Andy is an independent researcher developing methodology at the intersection of human-centred design and agentic AI systems. The HAI framework is the first structured methodology purpose-built for designing human–agent–system journeys, treating the agent as a first-class journey participant rather than as a tool layered onto an existing experience.</p>
+          <p>The framework's design-time artefacts — the Unified Three-Layer Matrix, Agent Mode Taxonomy, Goal Failure Protocol, Multi-Agent Role Taxonomy, and the Sovereignty Boundary dimension — are intended as a bridge between product, design, engineering, CX, and compliance teams under emerging governance regimes including the EU AI Act and NIST AI RMF.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ FOOTER ━━━━━━━━━━ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Authorship &amp; AI Disclosure</h4>
+        <p>All conceptual frameworks, analysis, and intellectual property are the author's own work. Perplexity was used for research and fact verification; Claude (Anthropic) was used for reviewing and refining written content. The author exercised full human oversight and editorial control throughout.</p>
+      </div>
+      <div>
+        <h4>License</h4>
+        <p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a></p>
+        <p>Share with attribution. No commercial use. No derivatives without written permission.</p>
+      </div>
+      <div>
+        <h4>Disambiguation</h4>
+        <p>HAI here refers to <em>Human-Centred Agentic Intelligence</em> — distinct from Stanford's Institute for Human-Centered AI (HAI), an academic research institute.</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2026 Anandakumar Muniasamy Pothiraj · UK Copyright, Designs and Patents Act 1988</span>
+      <span class="clock" id="clock">LDN · --:--:--</span>
+      <span>v2 · May 2026 · <a href="https://doi.org/10.5281/zenodo.20389202" target="_blank" rel="noopener">DOI 10.5281/zenodo.20389202</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js" defer></script>
+
+<script src="/js/hero-network.js" defer></script>
+
+</body>
+</html>
